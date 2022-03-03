@@ -7,7 +7,7 @@ public class Wordle {
 
   public Wordle(ArrayList<String> words) {
     this.words = words;
-    word = words.get((int) (Math.random() * this.words.size() + 1));
+    word = this.words.get((int)(Math.random() * this.words.size() + 1));
     word = "words";
     guesses = new String[6];
   }
