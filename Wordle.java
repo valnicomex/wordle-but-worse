@@ -9,13 +9,21 @@ public class Wordle {
     this.words = words;
     word = words.get((int) (Math.random() * this.words.size() + 1));
     word = "words";
+    guesses = new String[6];
+  }
+
+  public String getWord() {
+    return word;
   }
 
   public String guess(String guess, int guessNumber) {
     String result = "";
+
     if(guess.length() != 5)
       return "please enter a five letter word";
     
+    guesses[guessNumber] = guess;
+
     for(int i = 0; i < 5; i++) {
       if(guess.charAt(i) == (word.charAt(i))) {
         result += "✓";

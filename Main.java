@@ -12,7 +12,7 @@ public class Main {
     
     //array list: temp
     ArrayList<String> nothing = new ArrayList<String>();
-    nothing.add("something");
+    nothing.add("thing");
 
     //init obj + results
     ArrayList<String> results = new ArrayList<String>();
@@ -38,7 +38,7 @@ public class Main {
     if(i == 10)
       System.out.println("good job, you got the word");
     else
-      System.out.println("oh no, you lost. the word was");
+      System.out.println("oh no, you lost. the word was " + nothing.getWord());
     
   }
 }
