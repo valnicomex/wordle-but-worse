@@ -4,6 +4,8 @@ public class Wordle {
   private String word;
   private String[] guesses;
   private ArrayList<String> words;
+  private String fail = "please enter a valid response";
+  private String perfect = ":):):):):)";
 
   public Wordle(ArrayList<String> words) {
     this.words = words;
@@ -16,17 +18,25 @@ public class Wordle {
     return word;
   }
 
+  public String getFail() {
+    return fail;
+  }
+
+  public String getPerfect() {
+    return perfect;
+  }
+
   public String guess(String guess, int guessNumber) {
     String result = "";
 
     if(guess.length() != 5)
-      return "please enter a five letter word";
+      return fail;
     
     guesses[guessNumber] = guess;
 
     for(int i = 0; i < 5; i++) {
       if(guess.charAt(i) == (word.charAt(i))) {
-        result += "✓";
+        result += ":)";
       }
         
       else {

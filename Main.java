@@ -21,8 +21,6 @@ public class Main {
 
     }
 
-
-
     //init obj + results
     ArrayList<String> results = new ArrayList<String>();
     Wordle test = new Wordle(nothing);
@@ -38,22 +36,19 @@ public class Main {
       results.add(test.guess(myLine, i));
       System.out.println(results.get(i));
 
-      if(results.get(i).equals("please enter a five letter word"))
+      if(results.get(i).equals(test.getFail()))
         i--;
 
-      if(results.get(i).equals("✓✓✓✓✓")) {
+      if(results.get(i).equals(test.getPerfect())) {
         i = 10;
+        System.out.println("good job, you got the word");
       }
         
     }
-
+    sc.close();
     //end aka results
-    if(i == 10)
-      System.out.println("good job, you got the word");
-    else
+    if(i != 10)
       System.out.println("oh no, you lost. the word was: " + test.getWord());
     
-
-    sc.close();
   }
 }
