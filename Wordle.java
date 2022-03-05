@@ -9,8 +9,7 @@ public class Wordle {
 
   public Wordle(ArrayList<String> words) {
     this.words = words;
-    word = this.words.get((int)(Math.random() * this.words.size() + 1));
-    word = "words";
+    word = this.words.get((int) (Math.random() * this.words.size() + 1));
     guesses = new String[6];
   }
 
@@ -28,37 +27,42 @@ public class Wordle {
 
   public String guess(String guess, int guessNumber) {
     String result = "";
+    /*
+     * if(guess.length() != 5)
+     * return fail;
+     */
 
-    if(guess.length() != 5)
-      return fail;
-    
-    guesses[guessNumber] = guess;
+    try {
+      guesses[guessNumber] = guess;
 
-    for(int i = 0; i < 5; i++) {
-      if(guess.charAt(i) == (word.charAt(i))) {
-        result += ":)";
-      }
-        
-      else {
-        boolean check = true;
-        
-        for(int f = 0; f < 5; f++) {
-          if(guess.charAt(i) == word.charAt(f)) {
-            result += "O";
-            f = 10;
-            check = false;
+      for (int i = 0; i < 5; i++) {
+        if (guess.charAt(i) == (word.charAt(i))) {
+          result += ":)";
+        }
+
+        else {
+          boolean check = true;
+
+          for (int f = 0; f < 5; f++) {
+            if (guess.charAt(i) == word.charAt(f)) {
+              result += "O";
+              f = 10;
+              check = false;
+            }
+
           }
-          
-        }
-        
-        if(check){
-          result += "X";
-        }
-      }
-      
-    }
 
-    return result;
+          if (check) {
+            result += "X";
+          }
+        }
+
+      }
+
+      return result;
+    } catch (IndexOutOfBoundsException e) {
+      return fail;
+    }
   }
-  
+
 }

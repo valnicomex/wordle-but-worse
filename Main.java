@@ -25,7 +25,10 @@ public class Main {
     ArrayList<String> results = new ArrayList<String>();
     Wordle test = new Wordle(nothing);
     int i;
+    boolean ending = true;
 
+
+    System.out.println(test.getWord());
 
     //actual game starting
     System.out.println("enter your guess (only enter five vaild letters: a-z no caps)");
@@ -40,14 +43,15 @@ public class Main {
         i--;
 
       if(results.get(i).equals(test.getPerfect())) {
+        System.out.println("good job, you got the word in " + (i + 1) + " tries");
         i = 10;
-        System.out.println("good job, you got the word");
+        ending = false;
       }
         
     }
     sc.close();
     //end aka results
-    if(i != 10)
+    if(ending)
       System.out.println("oh no, you lost. the word was: " + test.getWord());
     
   }
