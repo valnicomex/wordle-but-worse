@@ -2118,7 +2118,6 @@ panda
 flier
 axles
 plied
-booby
 patio
 rabbi
 petal
@@ -3010,7 +3009,6 @@ pawns
 tamer
 poach
 baits
-damns
 gumbo
 daunt
 prank
@@ -4368,7 +4366,6 @@ kefir
 burgs
 unmet
 cuspy
-boobs
 boons
 hypes
 dynes
@@ -4807,7 +4804,6 @@ curia
 kebob
 cycad
 talky
-fucks
 tapis
 amide
 dolce
@@ -5067,7 +5063,6 @@ ousel
 umiak
 cuppy
 hames
-shits
 azine
 glads
 tacet

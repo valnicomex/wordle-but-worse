@@ -2,33 +2,33 @@ import java.util.ArrayList;
 
 public class Wordle {
 
-  //private instance fields
+  // private instance fields
   private String word;
   private String[] guesses;
   private ArrayList<String> words;
   private String fail = "please enter a valid response";
   private String perfect = ":):):):):)";
 
-  //constructor
+  // constructor
   public Wordle(ArrayList<String> words) {
     this.words = words;
 
-    //chooses word 
+    // chooses word
     word = this.words.get((int) (Math.random() * this.words.size() + 1));
     guesses = new String[6];
   }
 
-  //returns word
+  // returns word
   public String getWord() {
     return word;
   }
 
-  //returns response if fails
+  // returns response if fails
   public String getFail() {
     return fail;
   }
 
-  //returns response if perfect
+  // returns response if perfect
   public String getPerfect() {
     return perfect;
   }
@@ -42,7 +42,7 @@ public class Wordle {
       for (int i = 0; i < 5; i++) {
         if (guess.charAt(i) == (word.charAt(i))) {
           result += ":)";
-          
+
         }
 
         else {
